@@ -1,3 +1,6 @@
+# David H
+# recursive helper functions, namespaces, 52 choose n, list all possible permutations, etc
+
 import poker_functions as p
 
 cards = [None]*52
@@ -8,12 +11,17 @@ for s in range(1,5,1):
 		cards[(s-1)*13 + r-1] = p.show_card(r, s)
 		#print(cards[(s-1)*13 + r-1] + " : " + str((s-1)*13 + r-1))
 
+		
+# def recurse_test(n):
+	# if n == 1: return 1
+	# else: return n*recurse_test(n-1)
+
 #counter = 0
 
 def choose_n(number_to_choose):
 	choose_n.counter  = 0
 	def cn(arr, n):
-		#global counter
+		#global counter		# lolno
 		
 		if n == 0:
 			choose_n.counter += 1

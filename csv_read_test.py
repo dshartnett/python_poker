@@ -1,26 +1,18 @@
 # David H
 # 2015-04-22
 # Toy project to help me learn python
-# Various csv and poker test shit
 
 import csv
 import os
 
 import poker_functions as p
 import recursive_tests as r
-#import numpy as np
-
-#class Card
-
-# def recurse_test(n):
-	# if n == 1: return 1
-	# else: return n*recurse_test(n-1)
-	
-counter = 0
+import numpy as np
 
 training_hands = []
 test_hands = []
 
+# import training data
 counter = 0
 with open('.\\..\\data\\train.csv') as train_csvfile:
 	test_reader = csv.reader(train_csvfile, delimiter=',')
@@ -38,6 +30,7 @@ with open('.\\..\\data\\train.csv') as train_csvfile:
 		else:
 			print(row)
 
+# import test data
 counter = 0
 with open('.\\..\\data\\test.csv') as test_csvfile:
 	test_reader = csv.reader(test_csvfile, delimiter=',')
@@ -56,6 +49,7 @@ with open('.\\..\\data\\test.csv') as test_csvfile:
 			
 #for row in training_hands: print(p.show_hand(row['hand']) + "-> " + row['rank'])
 
+# show four of a kinds in test data
 for row in test_hands:
 	if row['rank'] == 7:
 		print(p.show_hand(row['hand']) + "-> " + str(row['rank']))

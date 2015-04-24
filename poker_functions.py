@@ -15,7 +15,7 @@ def show_hand(hand):
 		hand_string += show_card(card['rank'], card['suit']) + " "
 	return hand_string
 	
-# takes 
+# can a machine learn to write code as bad as this?
 #def calc_value(hand):
 def calc_value(hand_to_eval):
 	value = 0
