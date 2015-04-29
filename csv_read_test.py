@@ -23,7 +23,7 @@ with open('.\\..\\data\\train.csv') as train_csvfile:
 			hand = []
 			for i in range(0,10,2): hand.append({'rank':int(row[i+1]), 'suit':int(row[i])})
 			
-			to_append = {'hand':hand, 'rank':row[10]}
+			to_append = {'hand':hand, 'rank':int(row[10])}
 			training_hands.append(to_append)
 			
 			if int(row[10]) != p.calc_value(hand): print(str(counter) + ": " + row[10] + " " + p.show_hand(hand))
@@ -31,27 +31,28 @@ with open('.\\..\\data\\train.csv') as train_csvfile:
 			print(row)
 
 # import test data
-counter = 0
-with open('.\\..\\data\\test.csv') as test_csvfile:
-	test_reader = csv.reader(test_csvfile, delimiter=',')
-	for row in test_reader:
-		if row[0].isnumeric():# and int(row[10]) == 9:
+# counter = 0
+# with open('.\\..\\data\\test.csv') as test_csvfile:
+	# test_reader = csv.reader(test_csvfile, delimiter=',')
+	# for row in test_reader:
+		# if row[0].isnumeric():# and int(row[10]) == 9:
 		
-			counter += 1
-			hand = []
-			for i in range(1,11,2): hand.append({'rank':int(row[i+1]), 'suit':int(row[i])})
+			# counter += 1
+			# hand = []
+			# for i in range(1,11,2): hand.append({'rank':int(row[i+1]), 'suit':int(row[i])})
 			
-			to_append = {'hand':hand, 'rank':p.calc_value(hand)}
-			test_hands.append(to_append)
-		else:
-			print(row)
+			# to_append = {'hand':hand, 'rank':p.calc_value(hand)}
+			# test_hands.append(to_append)
+		# else:
+			# print(row)
 
 			
 #for row in training_hands: print(p.show_hand(row['hand']) + "-> " + row['rank'])
 
 # show four of a kinds in test data
-for row in test_hands:
-	if row['rank'] == 7:
+# for row in test_hands:
+for row in training_hands:
+	if row['rank'] >= 3:
 		print(p.show_hand(row['hand']) + "-> " + str(row['rank']))
 
 #print(show_hand([{'rank':3, 'suit':2},{'rank':4, 'suit':1}]))
