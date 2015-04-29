@@ -52,7 +52,7 @@ with open('.\\..\\data\\train.csv') as train_csvfile:
 # show four of a kinds in test data
 # for row in test_hands:
 for row in training_hands:
-	if row['rank'] >= 3:
+	if row['rank'] >= 5:
 		print(p.show_hand(row['hand']) + "-> " + str(row['rank']))
 
 #print(show_hand([{'rank':3, 'suit':2},{'rank':4, 'suit':1}]))
