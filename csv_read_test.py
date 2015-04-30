@@ -7,14 +7,16 @@ import os
 
 import poker_functions as p
 import recursive_tests as r
-import numpy as np
+#import numpy as np
 
 training_hands = []
 test_hands = []
 
 # import training data
 counter = 0
-with open('.\\..\\data\\train.csv') as train_csvfile:
+#with open('.\\..\\data\\train.csv') as train_csvfile:
+with open(os.path.join("..","data","train.csv")) as train_csvfile:
+
 	test_reader = csv.reader(train_csvfile, delimiter=',')
 	for row in test_reader:
 		if row[0].isnumeric():# and int(row[10]) == 9:
