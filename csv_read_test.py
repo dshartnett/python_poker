@@ -7,7 +7,13 @@ import os
 
 import poker_functions as p
 import recursive_tests as r
+import bn_grammar as bng
 #import numpy as np
+
+bng_test = bng.BNGrammar()
+
+#print(bng_test.re[1](True, "asdf", "zxcv"))
+print(bng_test.re[0](bng_test, 8))
 
 training_hands = []
 test_hands = []

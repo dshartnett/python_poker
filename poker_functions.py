@@ -1,10 +1,15 @@
 # David H
 # Poker based functions
 
+import platform
+
 ranks = {1:'A',2:'2',3:'3',4:'4',5:'5',6:'6',7:'7',8:'8',9:'9',10:'T',11:'J', 12:'Q', 13:'K'}
-suits = {1:'\u0003',2:'\u0006',3:'\u0004',4:'\u0005'}
-#suits = {1:'H',2:'S',3:'D',4:'C'}
-#suits = {1:'♥',2:'♠',3:'♦',4:'♣'}
+
+if platform.system() == "Windows": 
+	suits = {1:'\u0003',2:'\u0006',3:'\u0004',4:'\u0005'}
+elif platform.system() == "Linux":
+	suits = {1:'♥',2:'♠',3:'♦',4:'♣'}
+else: suits = {1:'H',2:'S',3:'D',4:'C'}
 
 def show_card(rank, suit):
 	return ranks[rank] + suits[suit]
